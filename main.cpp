@@ -45,7 +45,7 @@ int main()
        
        while (intial == ' ')
        {
-
+         // dp thjings
        }
 
    }
