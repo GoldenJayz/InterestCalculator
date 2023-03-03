@@ -3,6 +3,7 @@
 #include <tgmath.h>
 using namespace std;
 
+// Author Jaden
 
 double solveForTotal(int initial, float growthRate, int time, int timeRate)
 {
