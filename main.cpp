@@ -4,6 +4,7 @@
 using namespace std;
 
 // Author Jaden D
+// Maybe I should learn how to use make files one day.
 
 double solveForTotal(int initial, float growthRate, int time, int timeRate)
 {
@@ -18,11 +19,9 @@ double solveForTotal(int initial, float growthRate, int time, int timeRate)
 double solveForExp(int total, int initial, float growthRate)
 {
    int retval = 0;
-
    double log1Data = (double)total / initial;
    double log2Data = (double)1 + growthRate;
    retval = (double)log(log1Data) / log(log2Data);
-
    return retval;
 }
 
@@ -40,18 +39,39 @@ int main()
    if (res == '1')
    {
       string initial;
-      char growthRate;
-      char time;
-      char timeRate;
-
-      cout << "initial value: " << endl;
+      string growthRate;
+      string time;
+      string timeRate;
 
       while (!isdigit(initial[0]))
       {
+         cout << "initial value: " << endl;
          cin >> initial;
          int initialInt = atoi(initial.c_str());
-         cout << initialInt;
       }
+      
+      while (!isdigit(growthRate[0]))
+      {
+         cout << "growthRate value: " << endl;
+         cin >> growthRate;
+         int growthRateInt = atoi(growthRate.c_str());
+      }
+
+      while (!isdigit(time[0]))
+      {
+         cout << "time value: " << endl;
+         cin >> time;
+         int timeInt = atoi(time.c_str());
+      }
+
+      while (!isdigit(timeRate[0]))
+      {
+         cout << "timeRate value: " << endl;
+         cin >> timeRate;
+         int timeRateInt = atoi(timeRate.c_str());
+      }
+
+      cout << "The total is: " << solveForTotal(atoi(initial.c_str()), atof(growthRate.c_str()), atoi(time.c_str()), atoi(timeRate.c_str())) << endl;
    }
 
    // double res2 = solveForExp(30000, 15000, 0.0105);
